@@ -51,7 +51,7 @@ public class TopItemFragment extends MvpFragment {
             public void onClick(View v) {
                 DetailFragment.DetailExtraParam param = new DetailFragment.DetailExtraParam();
                 param.setFragmentClass(DetailFragment.class);
-                param.id = topStory.id;
+                param.setId(topStory.id);
                 FragmentLauncher.launch(v.getContext(), param);
             }
         });

@@ -32,7 +32,15 @@ public class DetailFragment extends CommonMvpFragment<DetailPresenter, DetailPre
 
     public static class DetailExtraParam extends CommonExtraParam {
 
-        public int id;
+        private int id;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
 
         @Override
         public String toString() {
@@ -143,8 +151,8 @@ public class DetailFragment extends CommonMvpFragment<DetailPresenter, DetailPre
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.menu_comments && storyExtraResponse != null) {
             CommentsFragment.CommentsExtraParam param = new CommentsFragment.CommentsExtraParam();
-            param.id = extraParam.id;
-            param.storyExtraResponse = storyExtraResponse;
+            param.setId(extraParam.id);
+            param.setStoryExtraResponse(storyExtraResponse);
             param.setFragmentClass(CommentsFragment.class);
             FragmentLauncher.launch(this, param, 0);
             return true;

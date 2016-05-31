@@ -8,9 +8,17 @@ import cn.mycommons.xiaoxiazhihu.business.pojo.request.BaseRequest;
  */
 public class GetShortCommentsRequest extends BaseRequest {
 
-    public int id;
+    private int id;
 
     public GetShortCommentsRequest(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -70,7 +70,7 @@ public class ZhihuApiRetrofitImpl implements ZhihuApi {
         return new RetrofitAdapter<GetStartInfoResponse>() {
             @Override
             GetStartInfoResponse call() throws Exception {
-                return httpApi.getStartInfoResponse(request.width, request.height).execute().body();
+                return httpApi.getStartInfoResponse(request.getWidth(), request.getHeight()).execute().body();
             }
         }.get();
     }
@@ -103,7 +103,7 @@ public class ZhihuApiRetrofitImpl implements ZhihuApi {
         return new RetrofitAdapter<GetNewsResponse>() {
             @Override
             GetNewsResponse call() throws Exception {
-                return httpApi.getNewsResponse(request.id).execute().body();
+                return httpApi.getNewsResponse(request.getId()).execute().body();
             }
         }.get();
     }
@@ -114,7 +114,7 @@ public class ZhihuApiRetrofitImpl implements ZhihuApi {
         return new RetrofitAdapter<GetThemeResponse>() {
             @Override
             GetThemeResponse call() throws Exception {
-                return httpApi.getThemeResponse(request.id).execute().body();
+                return httpApi.getThemeResponse(request.getId()).execute().body();
             }
         }.get();
     }
@@ -136,7 +136,7 @@ public class ZhihuApiRetrofitImpl implements ZhihuApi {
         return new RetrofitAdapter<GetShortCommentsResponse>() {
             @Override
             GetShortCommentsResponse call() throws Exception {
-                return httpApi.getShortComments(request.id).execute().body();
+                return httpApi.getShortComments(request.getId()).execute().body();
             }
         }.get();
     }
@@ -147,7 +147,7 @@ public class ZhihuApiRetrofitImpl implements ZhihuApi {
         return new RetrofitAdapter<GetLongCommentsResponse>() {
             @Override
             GetLongCommentsResponse call() throws Exception {
-                return httpApi.getLongComments(request.id).execute().body();
+                return httpApi.getLongComments(request.getId()).execute().body();
             }
         }.get();
     }

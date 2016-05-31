@@ -8,9 +8,17 @@ import cn.mycommons.xiaoxiazhihu.business.pojo.request.BaseRequest;
  */
 public class GetThemeRequest extends BaseRequest {
 
-    public int id;
+    private int id;
 
     public GetThemeRequest(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
         this.id = id;
     }
 

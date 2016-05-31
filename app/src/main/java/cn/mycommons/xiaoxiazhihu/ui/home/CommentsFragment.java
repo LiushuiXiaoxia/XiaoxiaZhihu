@@ -39,8 +39,24 @@ public class CommentsFragment extends CommonMvpFragment<CommentsPresenter, Comme
 
     public static class CommentsExtraParam extends CommonExtraParam {
 
-        public int id;
-        public GetStoryExtraResponse storyExtraResponse;
+        private int id;
+        private GetStoryExtraResponse storyExtraResponse;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public GetStoryExtraResponse getStoryExtraResponse() {
+            return storyExtraResponse;
+        }
+
+        public void setStoryExtraResponse(GetStoryExtraResponse storyExtraResponse) {
+            this.storyExtraResponse = storyExtraResponse;
+        }
 
         @Override
         public String toString() {

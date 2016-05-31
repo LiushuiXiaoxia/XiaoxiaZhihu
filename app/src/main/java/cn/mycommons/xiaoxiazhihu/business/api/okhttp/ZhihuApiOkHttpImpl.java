@@ -46,7 +46,7 @@ public class ZhihuApiOkHttpImpl implements ZhihuApi {
         XLog.d("ZhihuApiOkHttpImpl.getStartInfoResponse request = " + request);
 
         String url = "http://news-at.zhihu.com/api/4/start-image/%d*%d";
-        url = String.format(url, request.width, request.height);
+        url = String.format(url, request.getWidth(), request.getHeight());
         GetStartInfoResponse response = get(url, GetStartInfoResponse.class);
 
         XLog.i("req = %s, resp = %s", request, response);
@@ -83,7 +83,7 @@ public class ZhihuApiOkHttpImpl implements ZhihuApi {
         XLog.d("ZhihuApiOkHttpImpl.getNewsResponse request = " + request);
 
         String url = "http://news-at.zhihu.com/api/4/news/%s";
-        url = String.format(url, request.id);
+        url = String.format(url, request.getId());
         GetNewsResponse response = get(url, GetNewsResponse.class);
 
         XLog.i("req = %s, resp = %s", request, response);
@@ -96,7 +96,7 @@ public class ZhihuApiOkHttpImpl implements ZhihuApi {
         XLog.d("ZhihuApiOkHttpImpl.getThemeResponse request = " + request);
 
         String url = "http://news-at.zhihu.com/api/4/theme/%s";
-        url = String.format(url, request.id);
+        url = String.format(url, request.getId());
         GetThemeResponse response = get(url, GetThemeResponse.class);
 
         XLog.i("req = %s, resp = %s", request, response);
@@ -122,7 +122,7 @@ public class ZhihuApiOkHttpImpl implements ZhihuApi {
         XLog.d("ZhihuApiOkHttpImpl.getShortComments request = " + request);
 
         String url = "http://news-at.zhihu.com/api/4/story/%s/short-comments";
-        url = String.format(url, request.id);
+        url = String.format(url, request.getId());
         GetShortCommentsResponse response = get(url, GetShortCommentsResponse.class);
 
         XLog.i("req = %s, resp = %s", request, response);
@@ -135,7 +135,7 @@ public class ZhihuApiOkHttpImpl implements ZhihuApi {
         XLog.d("ZhihuApiOkHttpImpl.getLongComments request = " + request);
 
         String url = "http://news-at.zhihu.com/api/4/story/%s/long-comments";
-        url = String.format(url, request.id);
+        url = String.format(url, request.getId());
         GetLongCommentsResponse response = get(url, GetLongCommentsResponse.class);
 
         XLog.i("req = %s, resp = %s", request, response);

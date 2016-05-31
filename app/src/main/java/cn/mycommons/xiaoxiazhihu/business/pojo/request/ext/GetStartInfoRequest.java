@@ -8,12 +8,28 @@ import cn.mycommons.xiaoxiazhihu.business.pojo.request.BaseRequest;
  */
 public class GetStartInfoRequest extends BaseRequest {
 
-    public int width;
+    private int width;
 
-    public int height;
+    private  int height;
 
     public GetStartInfoRequest(int width, int height) {
         this.width = width;
+        this.height = height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
         this.height = height;
     }
 

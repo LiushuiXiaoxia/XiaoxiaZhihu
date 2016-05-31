@@ -249,7 +249,7 @@ public class HotnewsFragment extends CommonMvpFragment<HotnewsPresenter, Hotnews
             LastThemeStory story = (LastThemeStory) v.getTag();
             DetailFragment.DetailExtraParam param = new DetailFragment.DetailExtraParam();
             param.setFragmentClass(DetailFragment.class);
-            param.id = story.id;
+            param.setId(story.id);
             FragmentLauncher.launch(v.getContext(), param);
         }
     }

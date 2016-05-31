@@ -8,11 +8,21 @@ import cn.mycommons.xiaoxiazhihu.business.pojo.request.BaseRequest;
  */
 public class GetNewsRequest extends BaseRequest {
 
-    public int id;
+    private int id;
 
     public GetNewsRequest(int id) {
         this.id = id;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
 
     @Override
     public String toString() {

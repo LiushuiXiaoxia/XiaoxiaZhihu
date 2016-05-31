@@ -12,6 +12,8 @@ import android.support.v4.app.Fragment;
  */
 public class FragmentLauncher {
 
+    private FragmentLauncher(){}
+
     public static void launch(Context context, Class<? extends ICommonFragment> fragmentClass) {
         launch(context, new CommonExtraParam(fragmentClass));
     }

@@ -27,6 +27,8 @@ public class InjectHelp {
         );
     }
 
+    private InjectHelp(){}
+
     public static AppContext getAppContext() {
         return AppContext.getInstance();
     }

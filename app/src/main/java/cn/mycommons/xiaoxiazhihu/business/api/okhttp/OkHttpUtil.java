@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class OkHttpUtil {
 
     static final int HTTP_TIME_OUT = 15;
+    private OkHttpUtil(){}
 
     public static OkHttpClient newOkHttpClient() {
         OkHttpClient client = new OkHttpClient();

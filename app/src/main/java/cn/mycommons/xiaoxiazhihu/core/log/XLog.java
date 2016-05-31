@@ -9,6 +9,7 @@ import android.util.Log;
 public class XLog {
 
     static final String XIAOXIA_ZHIHU = "XiaoxiaZhihu";
+    private XLog(){}
 
     public static int v(String msg, Object... args) {
         if (args != null && args.length != 0) {

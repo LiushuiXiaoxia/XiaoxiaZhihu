@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 
 import java.security.InvalidParameterException;
+import java.util.logging.Logger;
 
 import cn.mycommons.xiaoxiazhihu.R;
 import cn.mycommons.xiaoxiazhihu.core.log.XLog;
@@ -17,7 +18,7 @@ import cn.mycommons.xiaoxiazhihu.core.log.XLog;
 public class ActivityDelegate<A extends ActionBarActivity, F extends Fragment> {
 
     static final int FRAGMENT_CONTAINER = R.id.fmFragmentContainer;
-
+    private static final Logger LOGGER = Logger.getLogger(ActivityDelegate.class.getName());
     protected A activity;
     private F commonFragment;
     private CommonExtraParam extraParam;
@@ -50,8 +51,10 @@ public class ActivityDelegate<A extends ActionBarActivity, F extends Fragment> {
                     activity.getSupportFragmentManager().beginTransaction().add(FRAGMENT_CONTAINER, commonFragment).commitAllowingStateLoss();
                 } catch (InstantiationException e) {
                     e.printStackTrace();
+                    throw new RuntimeException(e);
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
             }
         } else {

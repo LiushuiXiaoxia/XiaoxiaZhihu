@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import cn.mycommons.xiaoxiazhihu.app.InjectHelp;
 import de.greenrobot.event.EventBus;
 import de.greenrobot.event.EventBusException;
@@ -15,6 +18,7 @@ import de.greenrobot.event.EventBusException;
  */
 public class BaseMvpPresenter<V extends IMvpView> implements IMvpPresenter {
 
+    private static final Logger LOGGER = Logger.getLogger(BaseMvpPresenter.class.getName());
     protected ILoadDataView loadDataView;
     /**
      * View层模型
@@ -110,6 +114,8 @@ public class BaseMvpPresenter<V extends IMvpView> implements IMvpPresenter {
                 getEventBus().register(object);
             } catch (EventBusException eventBusException) {
                 // 如果object没有任何onEvent等订阅，会导致EventBusException，此处try-catch防止崩溃
+                LOGGER.log(Level.INFO,eventBusException.toString());
+                throw new RuntimeException(eventBusException);
             }
         }
     }

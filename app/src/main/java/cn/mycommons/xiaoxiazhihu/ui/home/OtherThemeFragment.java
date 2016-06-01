@@ -34,6 +34,12 @@ import cn.mycommons.xiaoxiazhihu.ui.base.mvp.MvpFragment;
 public class OtherThemeFragment extends MvpFragment<OtherThemePresenter, OtherThemePresenter.IHomeView> {
 
     static final String EXTRA_ITEM = "themeItem";
+    @Bind(R.id.swipeRefreshLayout)
+    SwipeRefreshLayout swipeRefreshLayout;
+    @Bind(R.id.recyclerView)
+    RecyclerView recyclerView;
+    ThemeItem themeItem;
+    MyAdapter adapter;
 
     public static OtherThemeFragment newInstance(ThemeItem themeItem) {
         OtherThemeFragment fragment = new OtherThemeFragment();
@@ -42,14 +48,6 @@ public class OtherThemeFragment extends MvpFragment<OtherThemePresenter, OtherTh
         fragment.setArguments(args);
         return fragment;
     }
-
-    @Bind(R.id.swipeRefreshLayout)
-    SwipeRefreshLayout swipeRefreshLayout;
-    @Bind(R.id.recyclerView)
-    RecyclerView recyclerView;
-
-    ThemeItem themeItem;
-    MyAdapter adapter;
 
     @Override
     protected int getFragmentLayout() {

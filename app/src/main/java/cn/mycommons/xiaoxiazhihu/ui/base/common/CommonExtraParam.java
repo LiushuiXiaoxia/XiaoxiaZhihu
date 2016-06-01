@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.content.Intent;
 
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import cn.mycommons.xiaoxiazhihu.app.IValidate;
 
@@ -14,10 +16,13 @@ import cn.mycommons.xiaoxiazhihu.app.IValidate;
  */
 public class CommonExtraParam implements Serializable, IValidate {
 
+    private static final Logger LOGGER = Logger.getLogger(CommonExtraParam.class.getName());
+
     public static <R extends CommonExtraParam> R getReqExtraParam(Activity activity) {
         try {
             return (R) activity.getIntent().getSerializableExtra(ICommonFragment.EXTRA_REQ);
         } catch (Exception e) {
+            LOGGER.log(Level.INFO,e.toString());
             return null;
         }
     }

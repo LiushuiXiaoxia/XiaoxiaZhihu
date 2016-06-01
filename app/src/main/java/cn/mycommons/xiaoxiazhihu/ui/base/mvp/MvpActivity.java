@@ -2,6 +2,8 @@ package cn.mycommons.xiaoxiazhihu.ui.base.mvp;
 
 import android.os.Bundle;
 
+import java.util.logging.Logger;
+
 import cn.mycommons.xiaoxiazhihu.core.log.XLog;
 import cn.mycommons.xiaoxiazhihu.ui.base.BaseActivity;
 
@@ -10,6 +12,7 @@ import cn.mycommons.xiaoxiazhihu.ui.base.BaseActivity;
  */
 public abstract class MvpActivity<P extends BaseMvpPresenter<V>, V extends IMvpView> extends BaseActivity {
 
+    private static final Logger LOGGER = Logger.getLogger(MvpActivity.class.getName());
     protected P presenter;
     protected V view;
 
@@ -60,6 +63,7 @@ public abstract class MvpActivity<P extends BaseMvpPresenter<V>, V extends IMvpV
                 presenter = pClass.newInstance();
             } catch (Exception e) {
                 e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }
         XLog.d("view = " + view);
@@ -79,6 +83,7 @@ public abstract class MvpActivity<P extends BaseMvpPresenter<V>, V extends IMvpV
             }
         } catch (Exception e) {
             XLog.w(e.toString());
+            throw new RuntimeException(e);
         }
         return null;
     }

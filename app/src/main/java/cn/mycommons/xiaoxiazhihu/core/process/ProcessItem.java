@@ -1,6 +1,9 @@
 package cn.mycommons.xiaoxiazhihu.core.process;
 
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import cn.mycommons.xiaoxiazhihu.core.log.XLog;
 
 /**
@@ -9,6 +12,7 @@ import cn.mycommons.xiaoxiazhihu.core.log.XLog;
  */
 public class ProcessItem<P> {
 
+    private static final Logger LOGGER = Logger.getLogger(ProcessItem.class.getName());
     String key;
 
     IProcess<P> process;
@@ -52,6 +56,7 @@ public class ProcessItem<P> {
             }
         } catch (Exception e) {
             XLog.i("process key = %s, param = %s fail", key, param);
+            LOGGER.log(Level.WARNING,e.toString());
         }
     }
 }

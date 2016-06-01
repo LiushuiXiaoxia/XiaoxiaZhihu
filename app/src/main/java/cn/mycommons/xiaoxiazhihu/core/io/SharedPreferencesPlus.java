@@ -7,6 +7,8 @@ import android.text.TextUtils;
 import com.google.gson.Gson;
 
 import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import cn.mycommons.xiaoxiazhihu.BuildConfig;
 import cn.mycommons.xiaoxiazhihu.core.log.XLog;
@@ -20,6 +22,7 @@ import cn.mycommons.xiaoxiazhihu.core.log.XLog;
 public class SharedPreferencesPlus {
 
     static final String KEY_VERION_POSTFIX = "___version";
+    private static final Logger LOGGER = Logger.getLogger(SharedPreferencesPlus.class.getName());
 
     private SharedPreferences sp;
 
@@ -92,7 +95,7 @@ public class SharedPreferencesPlus {
             } catch (Exception e) {
                 String content = String.format("save (%s,%s) fail.", key, object);
                 XLog.i(content);
-
+                LOGGER.log(Level.WARNING,e.toString());
                 return false;
             }
         }
@@ -133,6 +136,7 @@ public class SharedPreferencesPlus {
             } catch (Exception e) { // json解析出错
                 String msg = String.format("get %s of %s fail", key, type);
                 XLog.i(msg);
+                LOGGER.log(Level.WARNING,e.toString());
             }
         }
 

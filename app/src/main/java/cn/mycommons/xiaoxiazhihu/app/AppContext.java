@@ -17,11 +17,13 @@ public class AppContext extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        instance = this;
-
+        setInstance();
         initInject();
     }
 
+    private static void setInstance(){
+        instance = new AppContext();
+    }
     void initInject(){
         InjectHelp.init(this);
     }

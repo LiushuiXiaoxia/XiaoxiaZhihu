@@ -14,6 +14,7 @@ public class LoadingDialogFragment extends DialogFragment {
     public static final String DEFAULT_MSG = "数据加载中,请稍后……";
     private static final String DIMABLE = "dimable";
     private static final String MSG = "msg";
+    private OnCancelListener onCancelListener;
 
     public static LoadingDialogFragment newInstance() {
         return newInstance(null);
@@ -36,7 +37,7 @@ public class LoadingDialogFragment extends DialogFragment {
         return f;
     }
 
-    private OnCancelListener onCancelListener;
+
 
     @NonNull
     @Override

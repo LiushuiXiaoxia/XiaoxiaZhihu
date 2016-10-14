@@ -15,23 +15,6 @@ import cn.mycommons.xiaoxiazhihu.app.IValidate;
  */
 public class CommonExtraParam implements Serializable, IValidate {
 
-    public static <R extends CommonExtraParam> R getReqExtraParam(Activity activity) {
-        try {
-            return (R) activity.getIntent().getSerializableExtra(ICommonFragment.EXTRA_REQ);
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-    public static <R extends CommonExtraParam> R getRespExtraParam(Intent data) {
-        if (data != null) {
-            return (R) data.getSerializableExtra(ICommonFragment.EXTRA_RESP);
-        }
-        return null;
-    }
-
-    /// ************************************************************************************************************
-
     private Class<? extends ICommonFragment> fragmentClass;
 
     private Class<? extends Activity> activityClass;
@@ -49,6 +32,27 @@ public class CommonExtraParam implements Serializable, IValidate {
         this.fragmentClass = fragmentClass;
         this.activityClass = activityClass;
     }
+
+    public static <R extends CommonExtraParam> R getReqExtraParam(Activity activity) {
+        try {
+            return (R) activity.getIntent().getSerializableExtra(ICommonFragment.EXTRA_REQ);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static <R extends CommonExtraParam> R getRespExtraParam(Intent data) {
+        if (data != null) {
+            return (R) data.getSerializableExtra(ICommonFragment.EXTRA_RESP);
+        }
+        return null;
+    }
+
+    /// ************************************************************************************************************
+
+
+
+
 
     public Class<? extends ICommonFragment> getFragmentClass() {
         return fragmentClass;

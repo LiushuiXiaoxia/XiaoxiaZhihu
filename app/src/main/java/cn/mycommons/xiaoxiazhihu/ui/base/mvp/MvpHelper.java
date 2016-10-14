@@ -23,11 +23,10 @@ class MvpHelper<P extends BaseMvpPresenter, V extends IMvpView> {
 
         do {
             Type genType = target.getClass().getGenericSuperclass();
-            if (!(genType instanceof ParameterizedType)) {
-                break;
-            }
             Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
-            if (params == null || params.length < 1) {
+            final boolean condition1 = !(genType instanceof ParameterizedType);
+            final boolean condition2 = params == null || params.length < 1;
+            if (condition1 || condition2) {
                 break;
             }
             if (params[0] != null && params[0] instanceof Class) {
@@ -46,11 +45,10 @@ class MvpHelper<P extends BaseMvpPresenter, V extends IMvpView> {
 
         do {
             Type genType = target.getClass().getGenericSuperclass();
-            if (!(genType instanceof ParameterizedType)) {
-                break;
-            }
             Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
-            if (params == null || params.length < 2) {
+            final boolean condition1 = !(genType instanceof ParameterizedType);
+            final boolean condition2 = params == null || params.length < 2;
+            if (condition1 || condition2) {
                 break;
             }
             if (params[1] != null && params[1] instanceof Class) {

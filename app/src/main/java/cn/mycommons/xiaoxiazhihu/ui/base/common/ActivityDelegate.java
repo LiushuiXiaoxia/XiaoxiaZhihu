@@ -69,14 +69,8 @@ public class ActivityDelegate<A extends AppCompatActivity, F extends Fragment> {
     private boolean validate(Object obj) {
         boolean ret = false;
         do {
-            if (obj == null) {
-                break;
-            }
-            if (!(obj instanceof CommonExtraParam)) {
-                break;
-            }
             CommonExtraParam param = (CommonExtraParam) obj;
-            if (!param.validate()) {
+            if (obj == null || !(obj instanceof CommonExtraParam) || !param.validate()) {
                 break;
             }
             ret = true;

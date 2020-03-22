@@ -1,0 +1,21 @@
+ext {
+    android = [
+            compileSdkVersion: 28,
+            buildToolsVersion: "28.0.3",
+            minSdkVersion    : 17,
+            targetSdkVersion : 28,
+            supportVersion   : "28.0.0",
+    ]
+
+    dependencies = [
+            appcompatV7    : "com.android.support:appcompat-v7:$android.supportVersion",
+            supportAnno    : "com.android.support:support-annotations:$android.supportVersion",
+            supportCore    : "com.android.support:support-core-utils:$android.supportVersion",
+
+            okhttp3        : 'com.squareup.okhttp3:okhttp:3.4.1',
+            okhttp3Log     : 'com.squareup.okhttp3:logging-interceptor:3.4.1',
+            retrofit       : 'com.squareup.retrofit2:retrofit:2.0.1',
+            retrofitgson   : 'com.squareup.retrofit2:converter-gson:2.0.1',
+            gson           : 'com.google.code.gson:gson:2.8.5'
+    ]
+}
